@@ -1084,12 +1084,14 @@ NSString static *const kWKYTPlayerSyndicationRegexPattern = @"^https://tpc.googl
     [wkUController addUserScript:wkUScript];
     
     WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
-    
+
     configuration.userContentController = wkUController;
     
     configuration.allowsInlineMediaPlayback = YES;
     configuration.mediaPlaybackRequiresUserAction = NO;
     
+    [self.delegate playerViewWKWebViewConfiguration:configuration];
+
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:configuration];
     webView.scrollView.scrollEnabled = NO;
     webView.scrollView.bounces = NO;

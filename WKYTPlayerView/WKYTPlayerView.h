@@ -137,6 +137,8 @@ typedef NS_ENUM(NSInteger, WKYTPlayerError) {
  */
 - (void)playerViewIframeAPIDidFailedToLoad:(nonnull WKYTPlayerView *)playerView;
 
+- (void)playerViewWKWebViewConfiguration:(nonnull WKWebViewConfiguration *)configuration;
+
 @end
 
 /**
